@@ -29,8 +29,8 @@ app.post("/api/users", (req, res) => {
 	var jdata = req.body;
 	var data = {
 		name: jdata.name,
-		gender: jdata.gender,
-		token: uuid.v1()
+		token: uuid.v1(),
+		gender: jdata.gender
 	};
 	// TODO: Validate data
 

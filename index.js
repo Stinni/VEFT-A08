@@ -1,12 +1,13 @@
 
 const mongoose = require("mongoose");
 const api = require("./api");
+const db = "localhost/app";
 const port = 4000;
 
-mongoose.connect("localhost/app");
+mongoose.connect(db);
 mongoose.connection.once("open", () => {
-	console.log("Connected to database");
+	console.log("\x1b[36mConnected to database: " + db + "\x1b[0m");
 	api.listen(port, () => {
-		console.log("Web server started on port");
+		console.log("\x1b[31mWeb server started on port: " + port + "\x1b[0m");
 	});
 });
